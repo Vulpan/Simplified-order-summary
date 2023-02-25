@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <!-- <link rel="icon" type="image/svg+xml" href="/vite.svg" /> -->
+  <link rel="stylesheet" href="src/global-styles/style.css" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Simplified order summary</title>
+</head>
+
+
+<body>
+  <div class="order-summary">
+    <div class="order-summary-container">
+
+      <div class="order-summary-container__image"><img src="public/images/order-image.png"></div>
+
+      <div class="order-summary-container__summary-component">
+
+        <div class="order-summary-container__information-component">
+          <div class="order-summary-container__title">Order Summary</div>
+          <div class="order-summary-container__content-text">You're close! Confirm your purchase and complete your order
+            in the next step</div>
+        </div>
+
+        <div class="order-summary-container__order-content-container">
+          <img class="order-summary-container__type-icon" src="public/images/musical-note-icon.svg">
+          <div class="order-summary-container__vertical-divider"></div>
+
+          <div class="order-summary-container__order-content-component">
+            <div class="order-summary-container__order-title">Annual Plan</div>
+            <div class="order-summary-container__order-cost-value">$58.99 / year</div>
+          </div>
+
+          <a href="#">
+            <div class="order-summary-container__change-button">Change</div>
+          </a>
+
+        </div>
+        
+        <a class="order-summary-container__payment-button-container" href="#">
+            <div class="order-summary-container__payment-button">Proceed to Payment</div>
+            <div class="order-summary-container__loader"></div>
+        </a>
+
+        <a href="#">
+          <div class="order-summary-container__cancel-button">Cancel Order</div>
+        </a>
+
+      </div>
+
+
+    </div>
+  </div>
+
+  <script type="module" src="/src/global-scripts/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,266 @@
+/// Main Styles File
+/// Here we import all the global Styles files we need for our project.
+
+@import "styles/normalize.scss";
+@import "styles/root.scss";
+@import "styles/fonts.scss";
+
+body {
+  font-family: 'Manrope', sans-serif;
+  background-color: var(--color-background);
+  display: flex;
+  justify-content: center;
+}
+
+.order-summary {
+  max-width: 460px;
+  border-radius: 16px;
+  background-color: var(--color-white);
+  margin-top: 73px;
+
+  @include tablet() {
+    max-width: 342px;
+  }
+
+  @include tablet() {
+    margin-top: 113px;
+    margin-left: 16px;
+    margin-right: 16px;
+  }
+}
+
+.order-summary-container {
+  #{&}__image {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 16px 16px 0 0;
+
+    img {
+      max-width: inherit;
+      max-height: inherit;
+      object-fit: inherit;
+      border-radius: inherit;
+    }
+  }
+
+  #{&}__summary-component {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 32px 16px;
+    margin-top: 29px;
+  }
+
+  #{&}__information-component {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    margin-left: 39.5px;
+    margin-right: 39.5px;
+  }
+
+  #{&}__title {    
+    @include bold32();
+    color: var(--color-title);
+  }
+
+  #{&}__content-text {
+    @include medium16();
+    text-align: center;
+    color: var(--color-body);
+  }
+  
+  #{&}__order-content-container {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    margin-top: 40px;
+    background-color: var(--color-background);
+    border-radius: 16px;
+  }
+
+  #{&}__type-icon {
+    max-width: 24px;
+    max-height: 24px;
+    color: var(--color-body);
+    margin: 29px 0px 30px 32px;
+  }
+
+  #{&}__vertical-divider {
+    border: 1px solid var(--color-stroke);
+    margin: 16px 32px 16px 30px;
+  }
+
+  #{&}__order-content-component {
+    margin: 17px 0;
+  }
+
+  #{&}__order-title {
+    @include bold18();
+    color: var(--color-title);    
+    display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: horizontal;
+  }
+
+  #{&}__order-cost-value {
+    @include medium14();
+    color: var(--color-body);
+    padding-top: 2px;
+  }
+
+  #{&}__change-button {
+    max-height: 25px;
+    @include bold16();
+    color: var(--color-primary);
+    margin: 29px 0 28px 113px;
+    align-self: center;
+    text-align: right;
+    text-decoration: underline;
+    text-underline-offset: 3px;    
+    transition: color 2s;
+  }
+
+  #{&}__change-button:hover {
+    color: var(--color-primary-hover);
+  }
+
+  #{&}__payment-button-container {
+    display: flex;    
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-color: var(--color-primary);
+    border-radius: 16px;
+    padding: 15px 0;
+    padding-top: 16px;
+    margin-top: 32px;
+    transition: bacgriund-color 2s;
+  }
+
+  #{&}__payment-button-container:hover {
+    background-color: var(--color-primary-hover);
+  }
+
+  #{&}__payment-button {
+    @include bold16();
+    color: var(--color-white);
+    text-align: center;
+  }  
+
+  #{&}__loader {
+    display: none;
+    border: 4px solid var(--color-white);
+    border-top: 4px solid var(--color-title);
+    border-radius: 50%;
+    width: 16px;
+    height: 16px;
+    margin-left: 4px;
+    animation: spin 2s linear infinite; 
+  }
+
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+
+  #{&}__cancel-button {
+    @include bold16();
+    color: var(--color-title);
+    text-decoration: underline;
+    margin-top: 20px;    
+    text-underline-offset: 4px;
+  }
+
+  @include tablet() {
+    #{&}__image {      
+      height: 188px;
+      background-image: url("../../public/images/order-image-small.png");
+      background-repeat: no-repeat;
+
+      img {
+        opacity: 0;
+      }
+    }
+  
+
+    #{&}__summary-component {
+      margin: 35px 16px 24px 16px;
+    }
+
+    #{&}__information-component {
+      gap: 0;
+      margin: 0;
+    }
+
+    #{&}__title {    
+      @include bold24();
+    }
+  
+    #{&}__content-text {
+      @include medium14();
+      margin-top: 10px;
+    }
+
+    #{&}__order-content-container {
+      padding: 0;
+      margin: 0 16px;
+      margin-top: 32px;
+    }
+
+    #{&}__type-icon {
+      margin-left: 20px;
+      margin-top: 24px;
+    }
+  
+    #{&}__vertical-divider {
+      border: 1px solid var(--color-stroke);
+      margin: 16px 23px 16px 19px;
+      padding: 0;
+    }
+  
+    #{&}__order-content-component {
+      margin: 12px 0 16px 0;
+    }
+  
+    #{&}__order-title {
+      @include bold16();
+      letter-spacing: 0;
+    }
+  
+    #{&}__order-cost-value {
+      @include medium12();
+    }
+  
+    #{&}__change-button {
+      max-height: 22px;
+      @include bold14();
+      margin: 26px 0px 26px 55px;      
+      text-underline-offset: 2px;
+    }
+
+    #{&}__cancel-button {
+      @include bold14();
+      margin-left: 2px;     
+      text-underline-offset: 3px;
+    }
+  }
+}
+
+a:link {
+  text-decoration: none;
+}
+
+a:visited {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+a:active {
+  text-decoration: none;
+}
